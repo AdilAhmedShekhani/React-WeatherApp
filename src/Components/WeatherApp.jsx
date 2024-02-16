@@ -30,8 +30,8 @@ const WeatherApp = () => {
     const location = document.getElementsByClassName("weather-location");
 
     humidity[0].innerHTML = data.main.humidity + " %";
-    wind[0].innerHTML = data.wind.speed + " km/h";
-    temprature[0].innerHTML = data.main.temp + "°c";
+    wind[0].innerHTML = Math.floor(data.wind.speed) + " km/h";
+    temprature[0].innerHTML = Math.floor(data.main.temp) + "°c";
     location[0].innerHTML = data.name;
 
     if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n") {
@@ -86,8 +86,8 @@ const WeatherApp = () => {
       <div className="weather-image">
         <img src={wicon} alt="" />
       </div>
-      <div className="weather-temp">24°C</div>
-      <div className="weather-location">London</div>
+      <div className="weather-temp">21°c</div>
+      <div className="weather-location">Karachi</div>
       <div className="data-container">
         <div className="element">
           <img src={humidity_icon} alt="" className="icon" />
